@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+    padding: 20px;
+}
+.wrapper {
+    background: #fff;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+}
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+.input-box input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    outline: none;
+    font-size: 18px;
+}
+.input-box label {
+    position: absolute;
+    top: 40%;
+    left: 42px;
+    transform: translateY(-50%);
+    color: #9e9d9d;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 16px;
+    background: #ffffff;
+    padding: 0px;
+}
+.input-box input:focus{
+    background-color: #ebebeb;
+}
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+    top: 0px;
+    left: 10px;
+    font-size: 13px;
+    color: #000;
+    
+}
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn:hover {
+    background: #7c8294;
+}
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.btn.facebook {
+    background: #3b5998;
+    color: #ffffff;
+    font-size: 22px;
+    width: 48%;
+    padding: 15px;
+}
+.btn.facebook:hover {
+    background: #3755ff;
+}
+button.btn.google {
+    background: #DB4437;
+    color: #ffffff;
+    font-size: 22px;
+    width: 48%;
+    padding: 15px;
+}
+button.btn.google:hover {
+    background: #f45f52;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .input-box input {
+        padding: 12px;
+    }
+    .input-box label {
+        font-size: 14px;
+    }
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+    .btn.facebook,
+    .btn.google {
+        font-size: 20px;
+        padding: 12px;
+    }
+}
