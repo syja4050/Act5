@@ -34,20 +34,24 @@ body {
     font-size: 32px;
     font-weight: bold;
     color: #000;
+    text-align: center;
 }
-.input-box {
+.input-box, .password-container {
     position: relative;
     margin-bottom: 25px;
 }
-.input-box input {
+.input-box input,
+.password-container input {
     width: 100%;
     padding: 15px;
     border: 2px solid #000000;
     border-radius: 6px;
     outline: none;
     font-size: 18px;
+    background: transparent;
 }
-.input-box label {
+.input-box label,
+.password-container label {
     position: absolute;
     top: 40%;
     left: 42px;
@@ -63,7 +67,9 @@ body {
     background-color: #ebebeb;
 }
 .input-box input:focus + label,
-.input-box input:not(:placeholder-shown) + label {
+.input-box input:not(:placeholder-shown) + label,
+.password-container input:focus + label,
+.password-container input:not(:placeholder-shown) + label {
     top: 0px;
     left: 10px;
     font-size: 13px;
@@ -79,6 +85,9 @@ body {
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
 }
 .btn:hover {
     background: #7c8294;
@@ -98,15 +107,25 @@ body {
 .btn.facebook:hover {
     background: #3755ff;
 }
-button.btn.google {
+.btn.google {
     background: #DB4437;
     color: #ffffff;
     font-size: 22px;
     width: 48%;
     padding: 15px;
 }
-button.btn.google:hover {
+.btn.google:hover {
     background: #f45f52;
+}
+.btn.register {
+    background: #596172;
+    color: #ffffff;
+    font-size: 22px;
+    width: 48%;
+    padding: 15px;
+}
+.btn.register:hover {
+    background: #000000;
 }
 @media (max-width: 768px) {
     .wrapper {
@@ -115,10 +134,10 @@ button.btn.google:hover {
     .title {
         font-size: 28px;
     }
-    .input-box input {
+    .input-box input, .password-container input {
         padding: 12px;
     }
-    .input-box label {
+    .input-box label, .password-container label {
         font-size: 14px;
     }
     .btn {
