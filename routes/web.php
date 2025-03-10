@@ -22,6 +22,9 @@ Route::middleware('auth')->group(function(){
 
 Route::get('/register', [RegisterController::class, 'ShowRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'Register']);
+Route::get('/login', function(){
+    return view('login');
+})->name('login');
 
 Route::controller(SocialiteController::class)->group(function(){
     Route::get('/auth/{provider}', 'ridirectToProvider')->name('auth.redirect');

@@ -18,13 +18,16 @@ class SocialiteController
             'password' => 'required'
         ]);
         if(!Auth::attempt($cred)){
-            return back()->withError([
+            return response()->json([
                 'email' => 'Invalid Credentials'
-            ])->withInput();
+            ],401);
             
         }
-        $user = Auth::user();
-        return redirect()->route('dashboard');
+        return response()->json([
+            'message' => 'User logged in successfully',
+            'routes' => route('dashboard')
+        ]);
+        
     }
     public function ridirectToProvider($provider){
         return Socialite::driver($provider)->redirect();
@@ -45,7 +48,9 @@ class SocialiteController
 
         if(!$user){
             $user = User::create([
-                'name' => $providerUser->name,
+                'firstname' => $providerUser->firstname,
+                'middlename' => $providerUser->middlename,
+                'lastname' => $providerUser->lastname,
                 'email' => $providerUser->email,
                 'provider' => $provider,
                 'provider_id' => $providerUser->id,
