@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('login_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('fullname');
             $table->string('email');
             $table->string('ip_address');
             $table->timestamp('login_at')->useCurrent();
+            $table->timestamps();
 
         });
     }

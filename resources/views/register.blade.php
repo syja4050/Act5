@@ -20,7 +20,7 @@
                 <label for="firstname">First Name</label>
             </div>
             <div class="input-box">
-                <input type="text" name="middlename" id="middlename" required>
+                <input type="text" name="middlename" id="middlename">
                 <label for="middlename">Middle Name</label>
             </div>
             <div class="input-box">

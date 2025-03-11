@@ -44,13 +44,18 @@ class SocialiteController
 
         $providerUser = Socialite::driver($provider)->stateless()->user();
 
+        $arrayName = explode(" ", $providerUser->name);
+
+        $firstname = $arrayName[0];
+        $lastname = end($arrayName);
+
         $user = User::where('provider_id', $providerUser->id)->first();
 
         if(!$user){
             $user = User::create([
-                'firstname' => $providerUser->firstname,
+                'firstname' => $firstname,
                 'middlename' => $providerUser->middlename,
-                'lastname' => $providerUser->lastname,
+                'lastname' => $lastname,
                 'email' => $providerUser->email,
                 'provider' => $provider,
                 'provider_id' => $providerUser->id,
